@@ -78,7 +78,7 @@ export default function Hero() {
                 onClick={() => setMenuOpen(false)}
                 className="hover:text-cyan-300 transition"
               >
-                About
+                About Me
               </a>
             </motion.div>
           </motion.div>
@@ -101,9 +101,10 @@ export default function Hero() {
       {/* CONTENT */}
       <div className="relative z-10 w-full max-w-5xl">
 
-        <p className="tracking-[0.35em] text-sm text-slate-400 mb-8">
-          PUNYA SHREE
-        </p>
+        <p className="tracking-[0.3em] text-lg md:text-xl text-slate-400 mb-8">
+  PUNYASHREE
+</p>
+
 
         <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6">
           Developer
@@ -152,7 +153,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="/PunyaResume.pdf"
             target="_blank"
             rel="noreferrer"
             className="px-6 py-3 rounded-xl bg-white/5

@@ -2,32 +2,35 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="bg-[#020617] text-white py-24 px-6">
-      <div className="max-w-3xl mx-auto text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          viewport={{ once: true }}
-          className="text-2xl font-semibold mb-8"
-        >
-          About Me
-        </motion.h2>
+    <motion.section
+      id="about"
+      className="bg-[#020617] text-white py-28 px-6"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <div className="max-w-4xl mx-auto text-slate-400 leading-relaxed space-y-6">
+        <p className="text-white text-xl">
+          Hi there
+        </p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="text-slate-400 leading-relaxed"
-        >
-          I enjoy building web applications that feel real and useful. Working
-          across the full stack helps me understand how ideas turn into products,
-          from clean user interfaces to reliable backend systems. I’m especially
-          curious about how applications behave in production and continuously
-          work on improving my engineering and problem-solving skills.
-        </motion.p>
+        <p>
+          I’m Punyashree, an MCA graduate and a full stack developer who enjoys
+          building real-world applications and systems that solve practical
+          problems. I like working across the stack — from designing clean,
+          responsive user interfaces to developing reliable backend services and
+          APIs. I’m particularly interested in scalable system design, real-time
+          applications, and integrating AI into products. Through my projects,
+          I’ve worked on AI-powered systems, event-driven architectures, and
+          multi-role platforms designed for different stakeholders.
+        </p>
+
+        <p>
+          I’m always eager to learn, improve my skills, and collaborate on
+          meaningful projects that create real impact, so feel free to drop me a line.
+        </p>
       </div>
-    </section>
+    </motion.section>
   );
 }

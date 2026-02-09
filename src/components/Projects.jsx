@@ -56,139 +56,146 @@ export default function Projects() {
           Systems I’ve designed, built, and deployed
         </p>
       </div>
+{/* ===================== MOBILE ===================== */}
+<div className="md:hidden px-6 space-y-16">
 
-      {/* ===================== MOBILE ===================== */}
-      <div className="md:hidden px-6 space-y-16">
-        {projects.map((project, index) => (
+  <p className="text-center text-xs text-slate-500 mb-6">
+    Tap a project to view details
+  </p>
+
+  {projects.map((project, index) => (
+    <motion.div key={index}>
+      <motion.div
+        onClick={() =>
+          setActiveIndex(activeIndex === index ? null : index)
+        }
+        className={`bg-white/5 border border-white/10 rounded-2xl p-6
+                    transition cursor-pointer
+                    ${activeIndex === index ? "ring-1 ring-cyan-400/30" : ""}`}
+        initial={{ opacity: 0.6, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <h3 className="text-lg font-medium mb-2">
+          {project.title}
+        </h3>
+
+        <p className="text-slate-400 mb-3">
+          {project.short}
+        </p>
+
+        {activeIndex === index && (
           <motion.div
-            key={index}
-            onViewportEnter={() => setActiveIndex(index)}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35 }}
           >
-            <motion.div
-              className="bg-white/5 border border-white/10 rounded-2xl p-6"
-              initial={{ opacity: 0.6, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              viewport={{ amount: 0.6 }}
-            >
-              <h3 className="text-lg font-medium mb-2">
-                {project.title}
-              </h3>
+            <p className="text-slate-500 text-sm mb-4">
+              {project.details}
+            </p>
 
-              <p className="text-slate-400 mb-3">
-                {project.short}
-              </p>
+            <p className="text-xs text-slate-600 mb-6">
+              {project.tech}
+            </p>
 
-              {activeIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35 }}
+            {/* ACTIONS */}
+            <div className="flex gap-4 flex-wrap">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 text-sm rounded-lg border border-white/20
+                           hover:border-cyan-400 hover:text-cyan-300 transition"
+              >
+                GitHub
+              </a>
+
+              {project.paper && (
+                <a
+                  href={project.paper}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2 text-sm rounded-lg bg-white/5
+                             text-slate-300 hover:bg-white/10 transition"
                 >
-                  <p className="text-slate-500 text-sm mb-4">
-                    {project.details}
-                  </p>
-
-                  <p className="text-xs text-slate-600 mb-6">
-                    {project.tech}
-                  </p>
-
-                  {/* ACTIONS */}
-                  <div className="flex gap-4 flex-wrap">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="px-4 py-2 text-sm rounded-lg border border-white/20
-                                 hover:border-cyan-400 hover:text-cyan-300 transition"
-                    >
-                      GitHub
-                    </a>
-
-                    {project.paper && (
-                      <a
-                        href={project.paper}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2 text-sm rounded-lg bg-white/5
-                                   text-slate-300 hover:bg-white/10 transition"
-                      >
-                        Research Paper
-                      </a>
-                    )}
-
-                    {project.demos && (
-                      <div className="w-full">
-                        <button
-                          onClick={() =>
-                            setOpenDemoIndex(
-                              openDemoIndex === index ? null : index
-                            )
-                          }
-                          className="px-4 py-2 text-sm rounded-lg bg-cyan-400/10
-                                     text-cyan-300 hover:bg-cyan-400/20 transition"
-                        >
-                          Live Demo {openDemoIndex === index ? "▲" : "▼"}
-                        </button>
-
-                        {openDemoIndex === index && (
-                          <motion.div
-                            initial={{ opacity: 0, y: -6 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.25 }}
-                            className="mt-3 rounded-xl border border-white/10
-                                       bg-white/5 p-3 space-y-2"
-                          >
-                            <a
-                              href={project.demos.customer}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block px-3 py-2 rounded-md text-sm
-                                         hover:bg-white/10"
-                            >
-                              Customer / Admin
-                            </a>
-                            <a
-                              href={project.demos.vendor}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block px-3 py-2 rounded-md text-sm
-                                         hover:bg-white/10"
-                            >
-                              Vendor
-                            </a>
-                            <a
-                              href={project.demos.delivery}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="block px-3 py-2 rounded-md text-sm
-                                         hover:bg-white/10"
-                            >
-                              Delivery Partner
-                            </a>
-                          </motion.div>
-                        )}
-                      </div>
-                    )}
-
-                    {!project.demos && project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-2 text-sm rounded-lg bg-cyan-400/10
-                                   text-cyan-300 hover:bg-cyan-400/20 transition"
-                      >
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </motion.div>
+                  Research Paper
+                </a>
               )}
-            </motion.div>
+
+              {project.demos && (
+                <div className="w-full">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setOpenDemoIndex(
+                        openDemoIndex === index ? null : index
+                      );
+                    }}
+                    className="px-4 py-2 text-sm rounded-lg bg-cyan-400/10
+                               text-cyan-300 hover:bg-cyan-400/20 transition"
+                  >
+                    Live Demo {openDemoIndex === index ? "▲" : "▼"}
+                  </button>
+
+                  {openDemoIndex === index && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="mt-3 rounded-xl border border-white/10
+                                 bg-white/5 p-3 space-y-2"
+                    >
+                      <a
+                        href={project.demos.customer}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block px-3 py-2 rounded-md text-sm
+                                   hover:bg-white/10"
+                      >
+                        Customer / Admin
+                      </a>
+                      <a
+                        href={project.demos.vendor}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block px-3 py-2 rounded-md text-sm
+                                   hover:bg-white/10"
+                      >
+                        Vendor
+                      </a>
+                      <a
+                        href={project.demos.delivery}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="block px-3 py-2 rounded-md text-sm
+                                   hover:bg-white/10"
+                      >
+                        Delivery Partner
+                      </a>
+                    </motion.div>
+                  )}
+                </div>
+              )}
+
+              {!project.demos && project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2 text-sm rounded-lg bg-cyan-400/10
+                             text-cyan-300 hover:bg-cyan-400/20 transition"
+                >
+                  Live Demo
+                </a>
+              )}
+            </div>
           </motion.div>
-        ))}
-      </div>
+        )}
+      </motion.div>
+    </motion.div>
+  ))}
+</div>
+
 
       {/* ===================== DESKTOP ===================== */}
       <div className="hidden md:block max-w-4xl mx-auto py-24 px-6 space-y-10">
