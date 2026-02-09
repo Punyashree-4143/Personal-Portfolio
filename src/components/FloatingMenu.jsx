@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
+
 
 
 export default function FloatingMenu() {
