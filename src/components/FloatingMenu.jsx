@@ -40,7 +40,7 @@ export default function FloatingMenu() {
 >
   <FaEnvelope /> Email
 </a>
-s
+
 
 
 

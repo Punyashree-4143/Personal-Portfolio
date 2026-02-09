@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail, MdLocationOn } from "react-icons/md";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
   const [status, setStatus] = useState("");
@@ -32,7 +33,8 @@ export default function Contact() {
   return (
     <motion.section
       id="contact"
-      className="bg-[#020617] text-white py-28 px-6"
+      className="bg-[#020617] text-white pt-16 pb-28 px-6"
+
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -64,22 +66,24 @@ export default function Contact() {
                 <MdLocationOn className="text-cyan-300 text-lg" />
                 <span>Bengaluru, Karnataka</span>
               </div>
+{/* EMAIL */}
+<div>
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=punyashree978@gmail.com&su=Portfolio%20Contact&body=Hi%20Punyashree,%0A%0A"
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center gap-3 text-slate-300 hover:text-cyan-300 transition"
+  >
+    <FaEnvelope className="text-cyan-300 text-lg" />
+    <span>punyashree978@gmail.com</span>
+  </a>
+</div>
 
-              {/* EMAIL */}
-              <div className="flex items-center gap-3">
-                <MdEmail className="text-cyan-300 text-lg" />
-                <a
-                  href="mailto:yourname@email.com"
-                  className="hover:text-cyan-300 transition"
-                >
-                  yourname@email.com
-                </a>
-              </div>
 
               {/* SOCIAL LINKS */}
               <div className="flex flex-col gap-4 pt-6">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Punyashree-4143"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3 hover:text-cyan-300 transition"
@@ -89,7 +93,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/punyashree-nagaraju-9675b62a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center gap-3 hover:text-cyan-300 transition"

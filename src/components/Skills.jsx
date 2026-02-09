@@ -17,7 +17,8 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#020617] text-white py-24 px-6">
+    <section id="skills" className="bg-[#020617] text-white pt-24 pb-24 px-6">
+
 
       <div className="max-w-5xl mx-auto">
         <motion.h2
