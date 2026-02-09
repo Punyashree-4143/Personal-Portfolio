@@ -2,7 +2,8 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdEmail, MdLocationOn } from "react-icons/md";
+import { MdLocationOn } from "react-icons/md";
+
 import { FaEnvelope } from "react-icons/fa";
 
 export default function Contact() {
