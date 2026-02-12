@@ -1,153 +1,85 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const roles = [
   "Full Stack Developer",
-  "Frontend Developer",
-  "Backend Developer",
-  "DevOps Engineer",
+  "React Engineer",
+  "Backend Engineer",
+  "DevOps Enthusiast",
 ];
 
 export default function Hero() {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [phase, setPhase] = useState("idle");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPhase("cover");
+      setIndex((prev) => (prev + 1) % roles.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-[#020617]">
+    <section className="relative min-h-screen flex items-center px-6 md:px-16 overflow-hidden bg-[#0f172a] text-white">
 
-      {/* HAMBURGER BUTTON */}
-      <button
-        onClick={() => setMenuOpen(true)}
-        className="absolute top-6 right-6 z-30 flex flex-col gap-1.5"
-        aria-label="Open menu"
-      >
-        <span className="w-7 h-[2px] bg-white" />
-        <span className="w-7 h-[2px] bg-white" />
-        <span className="w-7 h-[2px] bg-white" />
-      </button>
+      {/* === Background Glow Orbs === */}
+      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px]" />
 
-      {/* OVERLAY MENU */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[#020617]/95 backdrop-blur"
-          >
-            {/* CLOSE */}
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="absolute top-6 right-6 text-white text-3xl"
-              aria-label="Close menu"
-            >
-              ✕
-            </button>
+      {/* === Main Content === */}
+      <div className="relative z-10 max-w-4xl">
 
-            <motion.div
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 30, opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="h-full flex flex-col items-center justify-center gap-10 text-2xl font-medium"
-            >
-              <a
-                href="#projects"
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-cyan-300 transition"
-              >
-                Projects
-              </a>
-              <a
-                href="#skills"
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-cyan-300 transition"
-              >
-                Skills
-              </a>
-              <a
-                href="#about"
-                onClick={() => setMenuOpen(false)}
-                className="hover:text-cyan-300 transition"
-              >
-                About Me
-              </a>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Greeting */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-slate-400 text-lg tracking-widest mb-4"
+        >
+          Hello, I'm
+        </motion.p>
 
-      {/* LIVE BACKGROUND */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-br from-cyan-900/40 via-slate-900 to-black"
-        animate={{ opacity: [0.6, 0.85, 0.6] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-extrabold leading-tight"
+        >
+          Punyashree
+        </motion.h1>
 
-      <motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(56,189,248,0.25),transparent_45%)]"
-        animate={{ opacity: [0.25, 0.45, 0.25] }}
-        transition={{ duration: 35, repeat: Infinity, ease: "easeInOut" }}
-      />
+        {/* Animated Role */}
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mt-6 text-2xl md:text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent"
+        >
+          {roles[index]}
+        </motion.div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 w-full max-w-5xl">
+        {/* Short Bio */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-6 text-slate-400 max-w-xl leading-relaxed"
+        >
+          I build scalable web applications and intelligent systems.
+          Passionate about full stack development, automation, and AI-driven solutions.
+        </motion.p>
 
-        <p className="tracking-[0.3em] text-lg md:text-xl text-slate-400 mb-8">
-  PUNYASHREE
-</p>
-
-
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6">
-          Developer
-        </h1>
-
-        {/* ROLE WIPE */}
-        <div className="relative inline-flex items-center text-2xl md:text-3xl font-semibold text-slate-300 overflow-hidden">
-          <span className="mr-3 text-slate-400">+</span>
-
-          <span className="relative z-10 whitespace-nowrap">
-            {roles[roleIndex]}
-          </span>
-
-          <motion.div
-            className="absolute left-6 top-0 h-full w-full bg-cyan-400 z-20 origin-left"
-            initial={{ scaleX: 0 }}
-            animate={
-              phase === "cover"
-                ? { scaleX: 1 }
-                : phase === "reveal"
-                ? { x: "100%" }
-                : { scaleX: 0, x: 0 }
-            }
-            transition={{ duration: 0.55, ease: "easeInOut" }}
-            onAnimationComplete={() => {
-              if (phase === "cover") {
-                setRoleIndex((prev) => (prev + 1) % roles.length);
-                setPhase("reveal");
-              }
-              if (phase === "reveal") {
-                setPhase("idle");
-              }
-            }}
-          />
-        </div>
-
-        {/* ACTION BUTTONS */}
-        <div className="mt-10 flex gap-4 flex-wrap">
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-10 flex flex-wrap gap-4"
+        >
           <a
             href="#projects"
-            className="px-6 py-3 rounded-xl border border-cyan-400/40
-                       text-cyan-300 hover:bg-cyan-400/10
-                       transition backdrop-blur"
+            className="px-7 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition font-medium shadow-lg shadow-cyan-500/20"
           >
             View Projects
           </a>
@@ -156,13 +88,11 @@ export default function Hero() {
             href="/PunyaResume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-3 rounded-xl bg-white/5
-                       text-slate-200 hover:bg-white/10
-                       transition backdrop-blur"
+            className="px-7 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition"
           >
-            Resume
+            Download Resume
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
