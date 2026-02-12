@@ -2,35 +2,46 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <motion.section
+    <section
       id="about"
-      className="bg-[#020617] text-white pt-24 pb-24 px-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      className="bg-[#0f172a] text-white py-16 md:py-20 px-6"
     >
-      <div className="max-w-4xl mx-auto text-slate-400 leading-relaxed space-y-6">
-        <p className="text-white text-xl">
-          Hi there
-        </p>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-4xl mx-auto"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          About Me
+        </h2>
 
-        <p>
-          I’m Punyashree, an MCA graduate and a full stack developer who enjoys
-          building real-world applications and systems that solve practical
-          problems. I like working across the stack — from designing clean,
-          responsive user interfaces to developing reliable backend services and
-          APIs. I’m particularly interested in scalable system design, real-time
-          applications, and integrating AI into products. Through my projects,
-          I’ve worked on AI-powered systems, event-driven architectures, and
-          multi-role platforms designed for different stakeholders.
-        </p>
+        <div className="space-y-5 text-slate-400 leading-relaxed text-sm md:text-base">
+          <p className="text-white font-medium">
+            Hi, I'm Punyashree.
+          </p>
 
-        <p>
-          I’m always eager to learn, improve my skills, and collaborate on
-          meaningful projects that create real impact, so feel free to drop me a line.
-        </p>
-      </div>
-    </motion.section>
+          <p>
+            I’m an MCA graduate and Full Stack Engineer who enjoys building 
+            real-world applications that solve practical problems. I work 
+            across the stack — designing responsive user interfaces and 
+            developing scalable backend services and APIs.
+          </p>
+
+          <p>
+            Through my projects, I’ve built AI-powered systems, event-driven 
+            applications, and multi-role platforms designed for different 
+            stakeholders. My interests include scalable system design, 
+            real-time architectures, and integrating AI into modern products.
+          </p>
+
+          <p>
+            I’m continuously learning, refining my technical skills, and 
+            looking to contribute to impactful engineering teams.
+          </p>
+        </div>
+      </motion.div>
+    </section>
   );
 }
