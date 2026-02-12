@@ -32,7 +32,7 @@ const projects = [
   {
   title: "AI Code Quality & Security Gate with CI/CD Enforcement",
   short:
-    "AI-powered DevSecOps platform for automated code quality, risk scoring, and deployment control.",
+    "AI Code Quality & Security Gate with Automated CI/CD Validation for code analysis, risk scoring, and deployment control.",
   details:
     "Performs file-level and project-level code analysis using AST-based inspection for Python and rule-based heuristics for multi-language support. Detects security vulnerabilities, cross-file inconsistencies, and architectural issues. Calculates weighted risk scores and generates transparent PASS / WARN / BLOCK decisions with explainable traces. Integrated with GitHub Actions CI to automatically enforce quality gates and block deployments on critical failures. Fully deployed with separate frontend (Vercel) and backend (Render) services.",
   tech:
