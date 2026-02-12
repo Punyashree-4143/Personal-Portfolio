@@ -30,14 +30,15 @@ const projects = [
     },
   },
   {
-    title: "AI-Based Code Quality & Security Analysis System",
-    short:
-      "AI-assisted multi-language code review and risk analysis platform.",
-    details:
-      "Analyzes source code at file and project level using AST-based analysis for Python, heuristic analysis for JavaScript, and generic rule engines for other languages. Detects cross-file issues, calculates risk scores, and produces transparent PASS / WARN / BLOCK decisions with explainable traces. Fully deployed with separate frontend and backend services.",
-    tech:
-      "React · Node.js · Python · AST Analysis · Security Rules · Render · Vercel",
-    github: "https://github.com/Punyashree-4143/AI-Based-Code-Quality-and-Security-Analysis-System",
+  title: "AI Code Quality & Security Gate with CI/CD Enforcement",
+  short:
+    "AI-powered DevSecOps platform for automated code quality, risk scoring, and deployment control.",
+  details:
+    "Performs file-level and project-level code analysis using AST-based inspection for Python and rule-based heuristics for multi-language support. Detects security vulnerabilities, cross-file inconsistencies, and architectural issues. Calculates weighted risk scores and generates transparent PASS / WARN / BLOCK decisions with explainable traces. Integrated with GitHub Actions CI to automatically enforce quality gates and block deployments on critical failures. Fully deployed with separate frontend (Vercel) and backend (Render) services.",
+  tech:
+    "React · FastAPI · Python · AST Analysis · Security Rules · GitHub Actions · CI/CD",
+
+    github: "https://github.com/Punyashree-4143/AI-Code-Quality-and-Security-Gate-with-CI-CD-Enforcement",
     live: "https://ai-based-code-quality-and-security.vercel.app/",
   },
 ];
