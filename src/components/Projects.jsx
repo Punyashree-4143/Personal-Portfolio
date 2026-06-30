@@ -99,7 +99,7 @@ export default function Projects() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-80px" }}
-              className="relative group overflow-visible rounded-xl border border-zinc-900 bg-zinc-900/10 p-6 sm:p-8 hover:scale-[1.01] hover:bg-zinc-900/20 transition-all duration-300 flex flex-col justify-between min-h-[250px]"
+              className="relative group overflow-visible rounded-xl border border-zinc-700/70 bg-zinc-900/45 backdrop-blur-sm p-6 sm:p-8 hover:scale-[1.01] hover:border-cyan-400/40 hover:bg-zinc-900/70 transition-all duration-300 flex flex-col justify-between min-h-[250px]"
             >
               {/* Tracing border SVG (Perimeter tracing effect on hover) */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none" fill="none">
