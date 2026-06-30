@@ -113,3 +113,18 @@
     background-position: 0% 0%;
   }
 }
+/* =========================================
+   Animated Background Grid
+========================================= */
+
+.shifting-grid {
+  background-color: #09090b;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+
+  background-size: 48px 48px;
+
+  opacity: 1;
+}
