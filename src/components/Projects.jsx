@@ -30,16 +30,34 @@ export default function Projects() {
       ]
     },
     {
-      title: 'SkillTrade – AI-Powered Skill Exchange Platform',
-      subtitle: 'Full-stack platform enabling users to exchange skills, connect, and collaborate through real-time interactions.',
-      description: 'Built a modern barter-based skill exchange platform with JWT authentication, protected routes, user dashboards, notifications, messaging system, and swap request workflows. Designed responsive frontend and scalable backend APIs with FastAPI and MongoDB deployment architecture.',
-      techStack: ['React', 'FastAPI', 'MongoDB', 'Tailwind CSS', 'JWT', 'REST APIs'],
-      icon: <Users className="w-5 h-5 text-cyan-400" />,
-      links: [
-        { type: 'github', label: 'GitHub', url: 'https://github.com/Punyashree-4143/skilltrade' , icon: <Github className="w-4 h-4" /> },
-        { type: 'demo', label: 'Live Demo', url: "https://skilltrade-eight.vercel.app", icon: <ExternalLink className="w-4 h-4" /> }
-      ]
+  title: 'AI Recruiter 🤖',
+  subtitle: 'AI-powered recruitment platform for intelligent candidate screening and hiring.',
+  description: 'Built an end-to-end AI recruitment system that analyzes job descriptions, performs hybrid candidate retrieval using Semantic Search (ChromaDB) and BM25, ranks candidates with AI-based scoring, evaluates profiles using LLMs, identifies skill gaps, generates explainable recommendations, compares shortlisted candidates, and provides an AI-assisted hiring decision.',
+  techStack: [
+    'React',
+    'FastAPI',
+    'Python',
+    'ChromaDB',
+    'Sentence Transformers',
+    'BM25',
+    'Groq LLM'
+  ],
+  icon: <Users className="w-5 h-5 text-cyan-400" />,
+  links: [
+    {
+      type: 'github',
+      label: 'GitHub',
+      url: 'https://github.com/Punyashree-4143/AI-Recruiter',
+      icon: <Github className="w-4 h-4" />
     },
+    {
+      type: 'demo',
+      label: 'Live Demo',
+      url: 'https://ai-recruiter-live.vercel.app',
+      icon: <ExternalLink className="w-4 h-4" />
+    }
+  ]
+},
     {
       title: 'Event-Driven Real-Time Hyperlocal Commerce System',
       subtitle: 'Real-time hyperlocal commerce platform built on event-driven architecture.',
@@ -62,6 +80,17 @@ export default function Projects() {
       links: [
         { type: 'github', label: 'GitHub', url: 'https://github.com/Punyashree-4143/AI-Code-Quality-and-Security-Gate-with-CI-CD-Enforcement', icon: <Github className="w-4 h-4" /> },
         { type: 'demo', label: 'Live Demo', url: "https://ai-based-code-quality-and-security.vercel.app/", icon: <ExternalLink className="w-4 h-4" /> }
+      ]
+    },
+    {
+      title: 'SkillTrade – AI-Powered Skill Exchange Platform',
+      subtitle: 'Full-stack platform enabling users to exchange skills, connect, and collaborate through real-time interactions.',
+      description: 'Built a modern barter-based skill exchange platform with JWT authentication, protected routes, user dashboards, notifications, messaging system, and swap request workflows. Designed responsive frontend and scalable backend APIs with FastAPI and MongoDB deployment architecture.',
+      techStack: ['React', 'FastAPI', 'MongoDB', 'Tailwind CSS', 'JWT', 'REST APIs'],
+      icon: <Users className="w-5 h-5 text-cyan-400" />,
+      links: [
+        { type: 'github', label: 'GitHub', url: 'https://github.com/Punyashree-4143/skilltrade' , icon: <Github className="w-4 h-4" /> },
+        { type: 'demo', label: 'Live Demo', url: "https://skilltrade-eight.vercel.app", icon: <ExternalLink className="w-4 h-4" /> }
       ]
     }
   ];
